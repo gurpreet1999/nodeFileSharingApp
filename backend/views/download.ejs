@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" >
+</head>
+<body>
+    
+<img src="https://www.shutterstock.com/image-vector/file-sharing-icon-260nw-680098528.jpg" alt="" class="logo" />
+<section class="download" >
+<img class="download_icon" src="https://cdn-icons-png.flaticon.com/512/5868/5868350.png" alt=""/>
+<% if(locals.error){%>  
+
+<h4><%=locals.error %></h4>
+<%}else{
+    %>
+ <h2>your file is ready to download</h2>  
+ <p>link expires in 24 hr</p>
+  <div class="download_meta">
+    <h4><%= filename %></h4>
+    <small><%= parseInt(filesize/1000)%>KB</small>
+  </div>
+
+<div class="sendbtn">
+    <a href="<%=downloadLink%>" >download file</a>
+</div>
+<%}%>
+</section>
+
+
+</body>
+</html>
